@@ -20,7 +20,7 @@ pipeline {
             label 'ec2'
           }
           steps {
-            sh 'whoami'
+            sh 'echo i am ec2'
             sleep(time: 10, unit: 'SECONDS')
           }
         }
@@ -30,7 +30,7 @@ pipeline {
             label 'ec2-2'
           }
           steps {
-            sh 'whoami'
+            sh 'echo i am ec2-2'
             sleep(time: 20, unit: 'SECONDS')
           }
         }
