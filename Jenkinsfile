@@ -34,10 +34,9 @@ pipeline {
             sleep(time: 20, unit: 'SECONDS')
           }
         }
-
       }
     }
-      stage('Checkpoint') {
+    stage('Checkpoint') {
          agent none
          steps {
             checkpoint 'Checkpoint'
@@ -49,7 +48,6 @@ pipeline {
             echo 'Deploying....'
          }
       }
-
   }
   environment {
     MY_NAME = 'Itay'
