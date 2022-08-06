@@ -12,6 +12,32 @@ pipeline {
       }
     }
 
+    stage('Testing') {
+      failFast true
+      parallel {
+        stage('ec2') {
+          agent {
+            label 'ec2'
+          }
+          steps {
+            sh 'whoami'
+            sleep(time: 10, unit: 'SECONDS')
+          }
+        }
+
+        stage('ec2-2') {
+          agent {
+            label 'ec2-2'
+          }
+          steps {
+            sh 'whoami'
+            sleep(time: 20, unit: 'SECONDS')
+          }
+        }
+
+      }
+    }
+
   }
   environment {
     MY_NAME = 'Itay'
